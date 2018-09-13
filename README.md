@@ -11,7 +11,7 @@ The flightRadar directory includes the whole scrapy project.
 To run the spider: 
 1. Go to ```webscraping/flightRadar``` 
 2. Install all packages listed in ```requirements.txt``` 
-3. Create .env file and define there the username and password for your database (variables' names: DATABASE_USER and DATABASE_PASSWORD).
+3. Create ```.env``` file and define there the username and password for your database (variables' names: DATABASE_USER and DATABASE_PASSWORD).
 
     Example:
     
@@ -30,7 +30,7 @@ The flightWebapp directory includes the Flask project of web application for bro
 To run the app:
 1. Go to ```webscraping/flightWebapp```
 2. Install all packages listed in ```requirements.txt``` 
-3. Create .env file and define there the username and password for your database (variables' names: DATABASE_USER and DATABASE_PASSWORD).
+3. Create ```.env``` file and define there the username and password for your database (variables' names: DATABASE_USER and DATABASE_PASSWORD).
 
     Example:
     
