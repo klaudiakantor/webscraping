@@ -16,7 +16,7 @@ To run the spider:
     
       DATABASE_USER = 'my_login'
       
-      DATABASE_PASSWORD = 'my_pwd"
+      DATABASE_PASSWORD = 'my_pwd'
 
 4. Run the command: ```scrapy crawl flightsSpider -o fligh.json```
 
