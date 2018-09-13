@@ -1,8 +1,11 @@
 flightRadar/.env
 *.log
 *.png
+*.json
 *.csv
 *.whl
 *.exe
-venv
-.idea
+venv/
+.idea/
+__pycache__/
+
