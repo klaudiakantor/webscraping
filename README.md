@@ -13,7 +13,9 @@ To run the spider:
 3. Create .env file and define there the username and password for your database (variables' names: DATABASE_USER and DATABASE_PASSWORD).
 
     Example:
+    
       DATABASE_USER = 'my_login'
+      
       DATABASE_PASSWORD = 'my_pwd"
 
 4. Run the command: ```scrapy crawl flightsSpider -o fligh.json```
