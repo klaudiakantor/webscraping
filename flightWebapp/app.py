@@ -1,14 +1,20 @@
 from flask import Flask, render_template, request, session
-from config import Config
 from flask_sqlalchemy import SQLAlchemy
 import pandas as pd
-from models import Flights
+import os
+from dotenv import load_dotenv
+
+env_path = os.path.join(os.getcwd(), '.env')
+load_dotenv(dotenv_path=env_path)
+DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
+DATABASE_USER = os.getenv("DATABASE_USER")
 
 app = Flask(__name__)
-appParameters = Config()
-app.config['SQLALCHEMY_DATABASE_URI'] = appParameters.SQLALCHEMY_DATABASE_URI
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://' + DATABASE_USER + ':' + DATABASE_PASSWORD + '@localhost:5432/flights'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'True'
 db = SQLAlchemy(app)
+from models import Flights
 
 
 @app.route('/')
@@ -33,7 +39,7 @@ def search():
                                                                                                   form_start + '%'),
                                                                                               Flights.stop.like(
                                                                                                   form_stop + '%')).all()
-    flights_set = set(flights_list)
+    flights_set=set(flights_list)
     created_at = []
     price = []
     carrier = []
