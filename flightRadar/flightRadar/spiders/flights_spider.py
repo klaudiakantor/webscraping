@@ -14,7 +14,7 @@ class FlightsSpider(scrapy.Spider):
     now = datetime.datetime.now()
 
     urls = []
-    for i in range(1,8):
+    for i in range(1, 8):
         day = datetime.datetime.strftime(now + datetime.timedelta(days=i), "%Y-%m-%d")
         ryanair = 'https://www.ryanair.com/pl/pl/booking/home/WMI/STN/{}//1/0/0/0'.format(day)
         urls.append(ryanair)
@@ -124,7 +124,7 @@ class FlightsSpider(scrapy.Spider):
             flight['start_time'] = self.driver.find_element_by_xpath(self.ryanair_start_time).text
             flight['end_time'] = self.driver.find_element_by_xpath(self.ryanair_end_time).text
             flight['price'] = str(self.driver.find_element_by_xpath(self.ryanair_price).text).replace(' ', '').replace(
-                'zł', '').replace(',','.')
+                'zł', '').replace(',', '.')
         else:
             print("***Operation failed****")
             raise Exception('ERROR: Could not extract carrier name')
