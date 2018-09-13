@@ -1,0 +1,8 @@
+flightRadar/.env
+*.log
+*.png
+*.csv
+*.whl
+*.exe
+venv
+.idea
